@@ -3,23 +3,18 @@
 namespace Ampeco\OmnipayTransbank\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
-use Omnipay\Common\Message\RequestInterface;
-use Omnipay\Common\Message\ResponseInterface;
 
-class Response extends AbstractResponse implements ResponseInterface
+class Response extends AbstractResponse
 {
-    protected int $statusCode;
-
     /**
-     * @param RequestInterface $request
+     * @param AbstractRequest $request
      * @param $data
      * @param int $statusCode
      */
-    public function __construct(AbstractRequest $request, $data, int $statusCode)
+    public function __construct(AbstractRequest $request, $data)
     {
         parent::__construct($request, $data);
         $this->data = json_decode($data, true, flags: JSON_THROW_ON_ERROR);
-        $this->statusCode = $statusCode;
     }
 
     /**
@@ -34,6 +29,11 @@ class Response extends AbstractResponse implements ResponseInterface
 
     public function isSuccessful(): bool
     {
-        return $this->statusCode < 400 && !$this->getErrorMessage();
+        return $this->getCode() < 400 && !$this->getErrorMessage();
+    }
+
+    public function getRedirectData()
+    {
+        return $this->data;
     }
 }

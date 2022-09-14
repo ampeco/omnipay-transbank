@@ -2,7 +2,7 @@
 
 namespace Ampeco\OmnipayTransbank\Message;
 
-class GetInscriptionTokenRequest extends AbstractRequest
+class CreateCardRequest extends AbstractRequest
 {
     protected string $clientUsername;
 
@@ -43,7 +43,7 @@ class GetInscriptionTokenRequest extends AbstractRequest
         return [
             'username' => $this->getClientUsername(),
             'email' => $this->getClientEmail(),
-            'response_url' => 'https://4444-213-145-115-235.eu.ngrok.io/payments/notify',
+            'response_url' => $this->getNotifyUrl(),
         ];
     }
 
@@ -52,6 +52,6 @@ class GetInscriptionTokenRequest extends AbstractRequest
      */
     protected function createResponse($data, $statusCode)
     {
-        return $this->response = new Response($this, $data, $statusCode);
+        return $this->response = new CreateCardResponse($this, $data, $statusCode);
     }
 }
