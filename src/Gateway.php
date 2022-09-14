@@ -2,8 +2,9 @@
 
 namespace Ampeco\OmnipayTransbank;
 
-use Ampeco\OmnipayQorPay\Message\AbstractRequest;
-use Ampeco\OmnipayQorPay\Message\PurchaseRequest;
+//use Ampeco\OmnipayQorPay\Message\AbstractRequest;
+//use Ampeco\OmnipayQorPay\Message\PurchaseRequest;
+use Ampeco\OmnipayTransbank\Message\GetInscriptionTokenRequest;
 use Omnipay\Common\AbstractGateway;
 
 class Gateway extends AbstractGateway
@@ -14,6 +15,12 @@ class Gateway extends AbstractGateway
     {
         return 'Transbank';
     }
+
+    public function getInscriptionToken(array $options = [])
+    {
+        return $this->createRequest(GetInscriptionTokenRequest::class, $options);
+    }
+    /////////////////////////
 
     public function createCard(array $options = []): string
     {
@@ -35,6 +42,6 @@ class Gateway extends AbstractGateway
 
     public function purchase(array $parameters)
     {
-        return $this->createRequest(PurchaseRequest::class, $parameters);
+//        return $this->createRequest(PurchaseRequest::class, $parameters);
     }
 }

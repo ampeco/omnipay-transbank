@@ -9,9 +9,9 @@ abstract class AbstractRequest extends OmniPayAbstractRequest
 {
     abstract public function getEndpoint();
 
-    const API_URL_TEST = 'https://webpay3gint.transbank.cl/rswebpaytransaction/api/oneclick/v1.2';
+    const API_URL_TEST = 'https://webpay3gint.transbank.cl/rswebpaytransaction/api/oneclick/v1.2/';
 
-    const API_URL_PROD = 'https://webpay3g.transbank.cl/rswebpaytransaction/api/oneclick/v1.2';
+    const API_URL_PROD = 'https://webpay3g.transbank.cl/rswebpaytransaction/api/oneclick/v1.2/';
 
     protected ?Gateway $gateway;
 
