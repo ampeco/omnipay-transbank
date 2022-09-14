@@ -1,8 +1,6 @@
-# omnipay-qorpay
-Omnipay plugin for https://docs.qorcommerce.io/docs
+# omnipay-transbank
+Omnipay plugin for https://www.transbankdevelopers.cl/
 
 
 ## API  Endpoints
-https://docs.qorcommerce.io/reference/payments-credit-debit-cards
-
-TEST
+https://www.transbankdevelopers.cl/referencia/oneclick
