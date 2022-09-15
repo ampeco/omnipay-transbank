@@ -6,12 +6,12 @@ use Omnipay\Common\Message\NotificationInterface;
 
 class NotificationResponse extends Response implements NotificationInterface
 {
-    public function getCardReference(): string
+    public function getToken(): string
     {
         return @$this->data['tbk_user'];
     }
 
-    public function getPaymentMethod(): string
+    public function getCardType(): string
     {
         return @$this->data['card_type'];
     }
@@ -34,5 +34,10 @@ class NotificationResponse extends Response implements NotificationInterface
     public function getMessage(): ?string
     {
         return @$this->data['error_message'];
+    }
+
+    public function isForTokenization(): bool
+    {
+        return isset($this->data['tbk_user']);
     }
 }

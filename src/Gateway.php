@@ -2,8 +2,6 @@
 
 namespace Ampeco\OmnipayTransbank;
 
-//use Ampeco\OmnipayQorPay\Message\AbstractRequest;
-//use Ampeco\OmnipayQorPay\Message\PurchaseRequest;
 use Ampeco\OmnipayTransbank\Message\CreateCardRequest;
 use Ampeco\OmnipayTransbank\Message\GetInscriptionTokenRequest;
 use Ampeco\OmnipayTransbank\Message\NotificationRequest;
@@ -13,7 +11,7 @@ class Gateway extends AbstractGateway
 {
     use CommonParameters;
 
-    public function getName()
+    public function getName(): string
     {
         return 'Transbank';
     }
