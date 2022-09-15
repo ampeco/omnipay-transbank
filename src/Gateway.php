@@ -6,6 +6,7 @@ namespace Ampeco\OmnipayTransbank;
 //use Ampeco\OmnipayQorPay\Message\PurchaseRequest;
 use Ampeco\OmnipayTransbank\Message\CreateCardRequest;
 use Ampeco\OmnipayTransbank\Message\GetInscriptionTokenRequest;
+use Ampeco\OmnipayTransbank\Message\NotificationRequest;
 use Omnipay\Common\AbstractGateway;
 
 class Gateway extends AbstractGateway
@@ -17,15 +18,8 @@ class Gateway extends AbstractGateway
         return 'Transbank';
     }
 
-    public function getInscriptionToken(array $options = [])
-    {
-        return $this->createRequest(GetInscriptionTokenRequest::class, $options);
-    }
-    /////////////////////////
-
     public function createCard(array $options = [])
     {
-//        $inscriptionTоken = $this->getInscriptionToken($options);
         return $this->createRequest(CreateCardRequest::class, $options);
     }
 
@@ -42,13 +36,13 @@ class Gateway extends AbstractGateway
         return $req->setGateway($this);
     }
 
+    public function acceptNotification(array $requestData)
+    {
+        return $this->createRequest(NotificationRequest::class, $requestData)->send();
+    }
+
     public function purchase(array $parameters)
     {
 //        return $this->createRequest(PurchaseRequest::class, $parameters);
-    }
-
-    public function supportsAcceptNotification()
-    {
-        return true;
     }
 }
