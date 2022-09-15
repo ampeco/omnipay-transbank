@@ -46,4 +46,9 @@ class Gateway extends AbstractGateway
     {
 //        return $this->createRequest(PurchaseRequest::class, $parameters);
     }
+
+    public function supportsAcceptNotification()
+    {
+        return true;
+    }
 }
