@@ -3,6 +3,7 @@
 namespace Ampeco\OmnipayTransbank;
 
 use Ampeco\OmnipayTransbank\Message\CreateCardRequest;
+use Ampeco\OmnipayTransbank\Message\DeleteCardRequest;
 use Ampeco\OmnipayTransbank\Message\GetInscriptionTokenRequest;
 use Ampeco\OmnipayTransbank\Message\NotificationRequest;
 use Omnipay\Common\AbstractGateway;
@@ -23,7 +24,7 @@ class Gateway extends AbstractGateway
 
     public function deleteCard(array $parameters = [])
     {
-        return false;
+        return $this->createRequest(DeleteCardRequest::class, $parameters)->send();
     }
 
     protected function createRequest($class, array $parameters)

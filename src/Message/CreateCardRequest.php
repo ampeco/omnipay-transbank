@@ -52,6 +52,6 @@ class CreateCardRequest extends AbstractRequest
      */
     protected function createResponse($data, $statusCode)
     {
-        return $this->response = new CreateCardResponse($this, $data, $statusCode);
+        return $this->response = new CreateCardResponse($this, $data);
     }
 }

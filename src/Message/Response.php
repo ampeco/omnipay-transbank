@@ -14,7 +14,7 @@ class Response extends AbstractResponse
     public function __construct(AbstractRequest $request, $data)
     {
         parent::__construct($request, $data);
-        $this->data = json_decode($data, true, flags: JSON_THROW_ON_ERROR);
+        $this->data = json_decode($data, true);
     }
 
     /**
