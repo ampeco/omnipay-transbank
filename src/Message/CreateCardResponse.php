@@ -23,7 +23,11 @@ class CreateCardResponse extends Response implements RedirectResponseInterface
 
     public function getRedirectUrl()
     {
-        return $this->getUrlWebPay() . '?TBK_TOKEN=' . $this->getToken();
+        return "<body onload='document.transbankForm.submit();'>
+        <form name='transbankForm' action='{$this->getUrlWebPay()}'  method='POST'>
+           <input type='hidden' name='TBK_TOKEN' value='{$this->getToken()}'/>
+        </form></body>";
+
     }
 
     public function isRedirect()
