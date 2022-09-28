@@ -41,6 +41,6 @@ class NotificationRequest extends AbstractRequest
      */
     protected function createResponse($data, $statusCode)
     {
-        return $this->response = new NotificationResponse($this, $data);
+        return $this->response = new NotificationResponse($this, $data, $statusCode);
     }
 }

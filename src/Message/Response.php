@@ -6,15 +6,18 @@ use Omnipay\Common\Message\AbstractResponse;
 
 class Response extends AbstractResponse
 {
+    private int $code;
+
     /**
      * @param AbstractRequest $request
      * @param $data
      * @param int $statusCode
      */
-    public function __construct(AbstractRequest $request, $data)
+    public function __construct(AbstractRequest $request, $data, int $code)
     {
         parent::__construct($request, $data);
         $this->data = json_decode($data, true);
+        $this->code = $code;
     }
 
     /**
@@ -27,13 +30,13 @@ class Response extends AbstractResponse
         return @$this->data['error_message'];
     }
 
+    public function getCode(): int
+    {
+        return $this->code;
+    }
+
     public function isSuccessful(): bool
     {
         return $this->getCode() < 400 && !$this->getErrorMessage();
-    }
-
-    public function getRedirectData()
-    {
-        return $this->data;
     }
 }

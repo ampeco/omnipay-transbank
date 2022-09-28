@@ -42,6 +42,6 @@ class DeleteCardRequest extends AbstractRequest
 
     protected function createResponse($data, $statusCode)
     {
-        return $this->response = new Response($this, $data);
+        return $this->response = new Response($this, $data, $statusCode);
     }
 }

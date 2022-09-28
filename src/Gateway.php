@@ -24,7 +24,7 @@ class Gateway extends AbstractGateway
 
     public function deleteCard(array $parameters = [])
     {
-        return $this->createRequest(DeleteCardRequest::class, $parameters)->send();
+        return $this->createRequest(DeleteCardRequest::class, $parameters);
     }
 
     protected function createRequest($class, array $parameters)
