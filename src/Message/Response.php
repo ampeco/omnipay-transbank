@@ -11,7 +11,7 @@ class Response extends AbstractResponse
     /**
      * @param AbstractRequest $request
      * @param $data
-     * @param int $statusCode
+     * @param int $code
      */
     public function __construct(AbstractRequest $request, $data, int $code)
     {

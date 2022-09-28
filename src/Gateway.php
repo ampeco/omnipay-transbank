@@ -6,6 +6,7 @@ use Ampeco\OmnipayTransbank\Message\CreateCardRequest;
 use Ampeco\OmnipayTransbank\Message\DeleteCardRequest;
 use Ampeco\OmnipayTransbank\Message\GetInscriptionTokenRequest;
 use Ampeco\OmnipayTransbank\Message\NotificationRequest;
+use Ampeco\OmnipayTransbank\Message\PurchaseRequest;
 use Omnipay\Common\AbstractGateway;
 
 class Gateway extends AbstractGateway
@@ -42,6 +43,6 @@ class Gateway extends AbstractGateway
 
     public function purchase(array $parameters)
     {
-//        return $this->createRequest(PurchaseRequest::class, $parameters);
+        return $this->createRequest(PurchaseRequest::class, $parameters);
     }
 }
