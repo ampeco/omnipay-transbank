@@ -33,4 +33,14 @@ trait CommonParameters
     {
         return $this->setParameter('commerce_code', $value);
     }
+
+    public function getStoreCommerceCode()
+    {
+        return $this->getParameter('store_commerce_code');
+    }
+
+    public function setStoreCommerceCode($value)
+    {
+        return $this->setParameter('store_commerce_code', $value);
+    }
 }

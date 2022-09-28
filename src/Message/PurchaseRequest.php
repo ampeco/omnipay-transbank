@@ -35,7 +35,7 @@ class PurchaseRequest extends AbstractRequest
             'details' => [
                 [
                     //TODO get purchase commerceCode
-                    'commerce_code' => 1,
+                    'commerce_code' => $this->gateway->getStoreCommerceCode(),
                     'buy_order' => $this->getTransactionId(),
                     'amount' => $this->getAmount(),
                 ],
