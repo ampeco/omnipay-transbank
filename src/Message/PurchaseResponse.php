@@ -27,7 +27,7 @@ class PurchaseResponse extends Response
 
     public function isSuccessful(): bool
     {
-        return parent::isSuccessful() && @$this->data['response_code'] === 0;
+        return parent::isSuccessful() && @$this->data['details'][0]['response_code'] === 0;
     }
 
 
