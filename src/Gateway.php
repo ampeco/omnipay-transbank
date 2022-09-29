@@ -45,4 +45,14 @@ class Gateway extends AbstractGateway
     {
         return $this->createRequest(PurchaseRequest::class, $parameters);
     }
+
+    /**
+     * Only CLP currency is allowed
+     *
+     * @return string
+     */
+    public function getCreateCardCurrency(): string
+    {
+        return 'CLP';
+    }
 }
