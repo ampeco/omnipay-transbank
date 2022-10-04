@@ -1,5 +1,5 @@
 <?php
-namespace Ampeco\OmnipayTransbank\Excepton;
+namespace Ampeco\OmnipayTransbank\Exception;
 
 class ResponseException extends \Exception
 {
