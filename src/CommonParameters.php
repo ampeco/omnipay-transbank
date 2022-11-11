@@ -43,4 +43,14 @@ trait CommonParameters
     {
         return $this->setParameter('store_commerce_code', $value);
     }
+
+    public function getClientEmail()
+    {
+        return $this->getParameter('client_email');
+    }
+
+    public function setClientEmail($value)
+    {
+        return $this->getParameter('client_email', $value);
+    }
 }
