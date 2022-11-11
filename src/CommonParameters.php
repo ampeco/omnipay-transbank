@@ -51,6 +51,6 @@ trait CommonParameters
 
     public function setClientEmail($value)
     {
-        return $this->getParameter('client_email', $value);
+        return $this->setParameter('client_email', $value);
     }
 }
