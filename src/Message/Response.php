@@ -39,4 +39,9 @@ class Response extends AbstractResponse
     {
         return $this->getCode() < 400 && !$this->getErrorMessage();
     }
+
+    public function getMessage(): string
+    {
+        return @$this->data['error_message'] ?? '';
+    }
 }
