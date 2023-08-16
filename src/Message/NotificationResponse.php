@@ -31,11 +31,6 @@ class NotificationResponse extends Response implements NotificationInterface
         return $this->isSuccessful() ? NotificationInterface::STATUS_COMPLETED : NotificationInterface::STATUS_FAILED;
     }
 
-    public function getMessage(): ?string
-    {
-        return @$this->data['error_message'];
-    }
-
     public function isForTokenization(): bool
     {
         return isset($this->data['tbk_user']);

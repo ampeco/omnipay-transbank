@@ -1,6 +1,6 @@
 {
     "name": "ampeco/omnipay-transbank",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Omnipay plugin for: https://www.transbankdevelopers.cl/",
     "type": "library",
     "license": "MIT",
